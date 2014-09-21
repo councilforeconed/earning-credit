@@ -32,6 +32,7 @@ class StudentsController < ApplicationController
   
   def destroy
     session[:student] = nil
+    flash[:notice] = "You have been logged out."
     redirect_to new_student_path
   end
   
