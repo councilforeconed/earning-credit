@@ -1,0 +1,17 @@
+<% @survey.each do |question| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= question["question"] %></h3>
+  </div>
+  <div class="panel-body">
+    <% question["answers"].each do |answer| %>
+      <div class="radio">
+        <label>
+          <input type="radio" name="<%= question["number"] %>" value="<%= answer["value"] %>">
+          <%= answer["text"] %>
+        </label>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
