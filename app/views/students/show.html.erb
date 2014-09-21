@@ -1,6 +1,54 @@
-<h1><%= @student.name %></h1>
+<h2>Hello, <%= @student.name %>.</h2>
 
-<h2>Access Code</h2>
-<p><%= @student.access_code %></p>
+<p>Your <strong>access code</strong> is <strong><%= @student.access_code %></strong>. Write this down. You'll need it if you want to log back in later today or sometime in the future.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Survey</th>
+      <th>Credit Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pre-Survey</td>
+      <td>
+        <% if @student.eligible_for_pre_survey? %>
+          <%= link_to "Take the Pre-Survey", quizzes_pre_survey_path %>
+        <% end %>
+        <%= @student.pre_survey_score %>
+      </td>
+    </tr>
+    <tr>
+      <td>Post-Survey</td>
+      <td>
+        <% if @student.eligible_for_post_survey? %>
+          <%= link_to "Take the Post-Survey", quizzes_post_survey_path %>
+        <% end %>
+        <%= @student.post_survey_score %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <div class="col-md-7">
+    <h3>What is credit?</h3>
+    <p>Credit scores range from 300 (low) to 850 (perfect).</p>
+    <p>Credit is borrowed money used to buy goods and services, which must be repaid later. Adults frequently use credit for major purchases, such as cars and houses, because they need these items and don’t have enough cash on hand.</p>
+    <p>In order to obtain credit from a lender, applicants must provide a credit history, which includes a credit score. A low credit score, which reflects late payments or abuse of credit in the past, can result in loan denial or very high interest rates. A high credit score, which reflects on-time payments and responsible use of credit, can result in easier access to loans with lower interest rates. Loan interest rates are critical because they determine the total cost of the purchase as well as the monthly payment. </p>
+  </div>
+  <div class="col-md-5">
+    <h3>What makes up your credit score?</h3>
+    <ul>
+      <li>35% Payment history</li>
+      <li>30% Managing your debt</li>
+      <li>15% Length of credit history</li>
+      <li>10% Diversity of accounts</li>
+      <li>10% Number of credit applications</li>
+    </ul>
+  </div>
+</div>
+
 
 <%= link_to "Logout", student_path, method: :delete, class: 'btn btn-danger' %>

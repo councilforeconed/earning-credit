@@ -11,4 +11,12 @@ class Student < ActiveRecord::Base
     message: "must be a valid email address."
   }
   
+  def eligible_for_pre_survey?
+    pre_survey_score.nil? && post_survey_score.nil?
+  end
+  
+  def eligible_for_post_survey?
+    pre_survey_score && post_survey_score.nil?
+  end
+  
 end

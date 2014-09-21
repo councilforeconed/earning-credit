@@ -1,17 +1,30 @@
-<% @survey.each do |question| %>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= question["question"] %></h3>
-  </div>
-  <div class="panel-body">
-    <% question["answers"].each do |answer| %>
-      <div class="radio">
-        <label>
-          <input type="radio" name="<%= question["number"] %>" value="<%= answer["value"] %>">
-          <%= answer["text"] %>
-        </label>
+<div class="row">
+  <div class="col-md-12">
+    <%= form_tag(quizzes_path, method: "post") do %>
+      <%= hidden_field_tag "type", value = @type %>
+      <% @survey.each do |question| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= question["question"] %></h3>
+        </div>
+        <div class="panel-body">
+          <% question["answers"].each do |answer| %>
+            <div class="radio">
+              <label>
+                <input type="radio" name="answers[<%= question["number"] %>]" value="<%= answer["value"] %>">
+                <%= answer["text"] %>
+              </label>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="row survey-submission">
+        <div class="col-md-12">
+          <button type="submit" class="submit-survey btn btn-default btn-lg btn-block">Submit Survey</button>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
-<% end %>

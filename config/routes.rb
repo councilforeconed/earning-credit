@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   
   get '/quizzes/pre-survey', to: 'quizzes#pre_survey'
   get '/quizzes/post-survey', to: 'quizzes#post_survey'
+  post '/quizzes', to: 'quizzes#submit_survey'
 end
