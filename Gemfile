@@ -15,6 +15,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'turbolinks'
 gem 'rails_12factor'
+gem 'jquery-tablesorter'
 gem 'pry'
 
 group :development do

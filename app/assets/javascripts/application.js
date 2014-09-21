@@ -12,6 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-tablesorter
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $(".students-table").tablesorter(); 
+});
