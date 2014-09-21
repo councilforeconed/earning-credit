@@ -1,3 +1,18 @@
+<div class+"row">
+  <div class="col-md-12">
+  <% if @student.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited
+        this word from being saved:</h2>
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-6">
     <h2>First Time Students</h2>
@@ -14,7 +29,7 @@
       <%= f.label :teacher_email, 'Your Teacher\'s Email Address' %>:
       <%= f.text_field :teacher_email, class: 'form-control' %><br />
 
-      <%= submit_tag 'Let\'s Go!', class: 'btn btn-primary' %>
+      <%= submit_tag 'Let\'s Begin!', class: 'btn btn-primary' %>
     <% end %>
   </div>
   <div class="col-md-6">
@@ -23,7 +38,7 @@
       <%= f.label :access_code, 'Access Code' %>:
       <%= f.text_field :access_code, class: 'form-control' %><br />
 
-      <%= submit_tag 'Let\'s Go!', class: 'btn btn-primary' %>
+      <%= submit_tag 'Let\'s Continue!', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>

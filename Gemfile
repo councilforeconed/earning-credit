@@ -13,6 +13,8 @@ gem 'haml-rails'
 gem 'therubyracer'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
+gem 'turbolinks'
+gem 'pry'
 
 group :development do
   gem 'spring'

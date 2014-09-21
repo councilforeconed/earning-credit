@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accesscode: 
+  teacher_email: MyString
+  section_code: MyString
+  student_id: MyString
+
+two:
+  accesscode: 
+  teacher_email: MyString
+  section_code: MyString
+  student_id: MyString
