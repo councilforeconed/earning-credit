@@ -14,6 +14,7 @@ gem 'therubyracer'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'turbolinks'
+gem 'rails_12factor'
 gem 'pry'
 
 group :development do
