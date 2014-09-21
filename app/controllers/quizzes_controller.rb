@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
   end
   
   def post_survey
-    @survey = YAML.load_file('config/pre_survey.yml')
+    @survey = YAML.load_file('config/post_survey.yml')
     render 'survey'
   end
   
