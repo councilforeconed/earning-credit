@@ -15,7 +15,7 @@ class QuizzesController < ApplicationController
   
   def submit_survey
     type = "#{params["type"]}_score=".to_sym
-    score = params["answers"].values.map(&:to_i).reduce(&:+)
+    score = params["answers"].values.map(&:to_i).reduce(&:+) + 300
     current_student.send(type, score)
     if current_student.save
       redirect_to student_path(current_student.id)
