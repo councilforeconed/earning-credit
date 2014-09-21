@@ -31,6 +31,10 @@
   </tbody>
 </table>
 
+<% if @student.pre_survey_score %>
+  <%= render 'loans' %>
+<% end %>
+
 <div class="row">
   <div class="col-md-7">
     <h3>What is credit?</h3>
@@ -50,5 +54,8 @@
   </div>
 </div>
 
-
-<%= link_to "Logout", student_path, method: :delete, class: 'btn btn-danger' %>
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to "Logout", student_path, method: :delete, class: 'btn btn-danger' %>
+  </div>
+</div>

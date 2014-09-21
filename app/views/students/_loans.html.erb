@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="col-md-4">
+    <h3>What does my credit score have to do with the amount I have to pay for my car?</h3>
+    <p>Credit scores also influence the interest rate an individual can obtain on a loan, if they can obtain a loan. An <strong>interest rate</strong> is the price paid for using someone else's money, expressed as a percentage of the amount borrowed. <strong>Principal</strong> is the original amount of money invested or lent. Adults often borrow money for major purchases, such as cars, boats, education and houses, because it would take too long to save for these purchases, and they would be unable to enjoy the benefits of them for a long period of time.</p>
+    <h3>Did you get the best deal?</h3>
+    <p>Shoppers with excellent credit were able to get a very low interest rate of <strong>2.5%</strong>. That might not seem like much, but interest compounds over the life of the loan and can really add up over time.</p>
+    <p>How much money could you have saved on your car if you had a better interest rate?</p>
+  </div>
+  <div class="col-md-8">
+    <table class="table">
+      <thead>
+      	<tr>
+      		<th>Base Price</th>
+      		<th>Number of Months</th>
+      		<th>Interest Rate</th>
+      		<th>Minimum Credit Score</th>
+          <th>Current Eligibility</th>
+          <% if @student.post_survey_score %><th>Future Eligibility<th><% end %>
+      	</tr>
+      </thead>
+      <tbody class="available-loans">
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(720) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>2.5%</td>
+          <td>720</td>
+          <% if @student.pre_survey_score >= 720 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 720 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(690) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>4.5%</td>
+          <td>690</td>
+          <% if @student.pre_survey_score >= 690 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 690 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(660) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>6.5%</td>
+          <td>660</td>
+          <% if @student.pre_survey_score >= 660 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 660 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(630) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>8.5%</td>
+          <td>630</td>
+          <% if @student.pre_survey_score >= 630 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 630 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(600) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>10.5%</td>
+          <td>600</td>
+          <% if @student.pre_survey_score >= 600 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 600 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(570) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>12.5%</td>
+          <td>570</td>
+          <% if @student.pre_survey_score >= 570 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 570 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(540) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>14.5%</td>
+          <td>540</td>
+          <% if @student.pre_survey_score >= 540 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 540 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(510) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>16.5%</td>
+          <td>510</td>
+          <% if @student.pre_survey_score >= 510 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 510 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+        <tr class="<%= "ineligible" unless @student.eligible_for_loan_with_score(480) %> loan">
+          <td>$20,000</td>
+          <td>60</td>
+          <td>18.5%</td>
+          <td>480</td>
+          <% if @student.pre_survey_score >= 480 %>
+          <td class="eligible">Eligible</td>
+          <% else %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+          <% if @student.post_survey_score && @student.post_survey_score >= 480 %>
+          <td class="eligible">Eligible</td>
+          <% elsif @student.post_survey_score %>
+          <td class="ineligible">Ineligible</td>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
