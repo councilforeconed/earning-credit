@@ -1,24 +1,30 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Student Name</th>
-      <th>Access Code</th>
-      <th>Section</th>
-      <th>Student ID</th>
-      <th>Pre-Survey Score</th>
-      <th>Post-Survey Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @students.each do |student| %>
-    <tr>
-      <td><%= student.name %></td>
-      <td><%= student.access_code %></td>
-      <td><%= student.section_code %></td>
-      <td><%= student.student_id %></td>
-      <td><%= student.pre_survey_score %></td>
-      <td><%= student.post_survey_score %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Students</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Access Code</th>
+          <th>Section</th>
+          <th>Student ID</th>
+          <th>Pre-Survey Score</th>
+          <th>Post-Survey Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.access_code %></td>
+          <td><%= student.section_code %></td>
+          <td><%= student.student_id %></td>
+          <td><%= student.pre_survey_score %></td>
+          <td><%= student.post_survey_score %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%= render "activity/footer" %>

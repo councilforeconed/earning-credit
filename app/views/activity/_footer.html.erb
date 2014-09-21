@@ -1,13 +1,16 @@
 <div class="row">
   <footer class="col-sm-12">
-    <strong>Teacher Access</strong>
+    <div class="teacher-access">
     <% if teacher_signed_in? %>
       Logged in as <strong><%= current_teacher.email %></strong>.
-      <%= link_to 'Edit profile', edit_teacher_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_teacher_session_path, method: :delete, :class => 'navbar-link'  %>
+      <%= link_to "Interest Rates", teachers_loan_chart_path, :class => 'btn btn-default'  %>
+      <%= link_to "Teacher Dashboard", teachers_path, :class => 'btn btn-default'  %>
+      <%= link_to 'Edit profile', edit_teacher_registration_path, :class => 'btn btn-default' %>
+      <%= link_to "Logout", destroy_teacher_session_path, method: :delete, class: 'btn btn-warning'  %>
     <% else %>
-      <%= link_to "Sign up", new_teacher_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Login", new_teacher_session_path, :class => 'navbar-link'  %>
+      <%= link_to "Sign up as a Teacher", new_teacher_registration_path, :class => 'btn btn-default'  %>
+      <%= link_to "Login as a Teacher", new_teacher_session_path, :class => 'btn btn-primary'  %>
     <% end %>
+    </div>
   </footer>
 </div>

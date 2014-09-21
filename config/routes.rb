@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :students
 
   get '/teachers', to: 'teachers#index'
+  get '/teachers/loan-chart', to: 'teachers#loans'
 
   get '/quizzes/pre-survey', to: 'quizzes#pre_survey'
   get '/quizzes/post-survey', to: 'quizzes#post_survey'
