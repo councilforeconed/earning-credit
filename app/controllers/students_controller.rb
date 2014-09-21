@@ -4,7 +4,7 @@ class StudentsController < ApplicationController
     if current_student
       redirect_to student_path(current_student.id)
     else
-      redirect_to root
+      redirect_to root_path
     end
   end
   
@@ -22,7 +22,12 @@ class StudentsController < ApplicationController
   end
   
   def show
-    @student = current_student
+    if session[:student].nil? || session[:student] != params[:id].to_i
+      flash[:alert] = "You cannot view another students information."
+      redirect_to current_student ? student_path(session[:student]) : root_path
+    else
+      @student = Student.find(params[:id])
+    end
   end
   
   def destroy
