@@ -2,6 +2,7 @@ class Student < ActiveRecord::Base
 
   before_validation(on: :create) do
     self.access_code = rand.to_s[2..7]
+    self.teacher_email.downcase!
   end
 
   validates :name, presence: true
