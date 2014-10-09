@@ -11,6 +11,7 @@
           <th>Student ID</th>
           <th>Pre-Survey Score</th>
           <th>Post-Survey Score</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,7 @@
           <td><%= student.student_id %></td>
           <td><%= student.pre_survey_score %></td>
           <td><%= student.post_survey_score %></td>
+          <td><%= link_to 'Delete', "/teachers/student/#{student.id}", method: :delete %>
         </tr>
         <% end %>
       </tbody>
